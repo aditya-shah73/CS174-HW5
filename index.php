@@ -1,18 +1,55 @@
 <?php
 
-echo "<!DOCTYPE html>
+echo"<!DOCTYPE html>
 <html>
 <head>
 	<title>Throw-a-Coin-in-the-Fountain</title>
+	<script type='text/javascript'>
+
+	function displayFountain(box){
+	
+	var fountainPics = new Array(5)
+	fountainPics[0] = 'resources/fountain1.png';
+	fountainPics[1] = 'resources/fountain2.png';
+	fountainPics[2] = 'resources/fountain3.png';
+	document.getElementById('fountainPic').src = fountainPics[parseInt(box.value)];
+	}
+	</script>
 </head>
 <body>
 	<h1>Coin-In-Fountain Wish</h1>
+	<table>
+<tr>
+<td>
+
+<form name='fountainSelections'>
+
+<h2>Fountain Selections</h2>
+
+<input type='radio' name='chook' value='0' checked='checked' onclick='displayFountain(this);''>Fountain 1
+<br />
+<input type='radio' name='chook' value='1' onclick='displayFountain(this);'>Fountain 2
+<br />
+<input type='radio' name='chook' value='2' onclick='displayFountain(this);'>Fountain 3
+
+	</form>
+	</td>
+	<td>
+	<img src='resources/fountain1.png' name='fountainPic' id='fountainPic' />
+	</td>
+	</tr>
+	</table>
+
+
 	<form name='details' action='models/formAction.php'>
-	<label name = 'paymethod'>Payment Method</label>
+	<label name = 'userWish'>Enter your wish</label>
+	<input type='text' name='wish'><br>
+	<label name = 'userEmail'>Enter your email</label>
+	<input type='text' name='userEmail'><br>
+	<label name = 'payMethod'>Payment Method</label>
 	<input type='text' name='method'><br>
 	<label>Friends Email</label>
-	<input type='text' name='emails'><br>
-	<input type='submit' name='Submit'>
+	<input type='text' name='friendEmails'><br>
 	</form>
 	<form name = 'test' action='config/config.php' method='POST'>
 	  <script
