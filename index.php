@@ -1,4 +1,5 @@
 <?php
+require('fpdf.php');
 
 echo "<!DOCTYPE html>
 <html>
@@ -18,4 +19,17 @@ echo "<!DOCTYPE html>
 
 </body>
 </html>";
+
+
+
+$wishPDF = createPDF($wish)
+
+function createPDF($wishDetails){
+	$pdf = new FPDF();
+	$pdf->AddPage();
+	$pdf->SetFont('Times New Roman', '', 24);
+	$pdf->Cell(0, 50, $wishDetails, 0, 1, 'C');
+	return $pdf;
+}
+
 
