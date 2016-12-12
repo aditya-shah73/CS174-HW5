@@ -51,13 +51,14 @@ echo"<!DOCTYPE html>
 	<label>Friends Email</label>
 	<input type='text' name='friendEmails'><br>
 	</form>
-	<form name = 'test' action='config/config.php' method='POST'>
-	  <script
-	    src='https://checkout.stripe.com/checkout.js' class='stripe-button'
-	    data-key='pk_test_mfDmFaNUG5FaS8zNKTg3VKAF'
-	    data-description='Make a wish ($0.50)'
-	    data-amount='50'>
-	  </script>
-	</form>
+
+	<?php require_once('/config/config.php'); ?>
+<form action='models/charge.php' method='post'>
+  <script src='https://checkout.stripe.com/checkout.js' class='stripe-button'
+          data-key='pk_test_mfDmFaNUG5FaS8zNKTg3VKAF'
+          data-description='Access for a year'
+          data-amount='5000'
+          data-locale='auto'></script>
+</form>
 </body>
 </html>";
