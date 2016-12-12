@@ -1,0 +1,37 @@
+{
+    "name": "CS174-Hw5",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Shakti Singh Rathore",
+            "email": "shaktisingh.rathore@sjsu.edu"
+        },
+	{
+		"name": "Aditya Shah",
+            	"email": "aditya.shah@sjsu.edu"	
+	},
+	{
+		"name": "Joshua Urrea",
+            	"email": "joshua.urrea@sjsu.edu"
+	}
+    ],
+    "require": {
+    	 "require": {
+        "setasign/fpdf": "1.8.1"
+    }
+
+	},
+	"autoload": {
+	    "psr-4": {
+	      "thrill_seekers\\hw4\\": "",
+		"thrill_seekers\\hw4\\controllers\\": "src/controllers/",
+		"thrill_seekers\\hw4\\views\\": "src/views/",
+		"thrill_seekers\\hw4\\views\\elements\\": "src/views/elements/",
+		"thrill_seekers\\hw4\\views\\helpers\\": "src/views/helpers/",
+		"thrill_seekers\\hw4\\models\\": "src/models/",
+		"thrill_seekers\\hw4\\configs\\": "src/configs/",
+		"thrill_seekers\\hw4\\tests\\":"tests/"
+    		}
+  	}
+
+}
