@@ -6,19 +6,18 @@
             "name": "Shakti Singh Rathore",
             "email": "shaktisingh.rathore@sjsu.edu"
         },
-	{
+		{
 		"name": "Aditya Shah",
             	"email": "aditya.shah@sjsu.edu"	
-	},
-	{
+		},
+		{
 		"name": "Joshua Urrea",
             	"email": "joshua.urrea@sjsu.edu"
-	}
+		}
     ],
-    "require": {
-    	 "require": {
-        "setasign/fpdf": "1.8.1"
-    }
+   	"require": {
+        "setasign/fpdf": "1.8.1",
+        "stripe/stripe-php": "4.3.0"
 
 	},
 	"autoload": {
