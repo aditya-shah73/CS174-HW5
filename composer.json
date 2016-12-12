@@ -17,20 +17,9 @@
     ],
    	"require": {
         "setasign/fpdf": "1.8.1",
-        "stripe/stripe-php": "4.3.0"
+        "stripe/stripe-php": "4.*"
 
 	},
 	"autoload": {
-	    "psr-4": {
-	      "thrill_seekers\\hw4\\": "",
-		"thrill_seekers\\hw4\\controllers\\": "src/controllers/",
-		"thrill_seekers\\hw4\\views\\": "src/views/",
-		"thrill_seekers\\hw4\\views\\elements\\": "src/views/elements/",
-		"thrill_seekers\\hw4\\views\\helpers\\": "src/views/helpers/",
-		"thrill_seekers\\hw4\\models\\": "src/models/",
-		"thrill_seekers\\hw4\\configs\\": "src/configs/",
-		"thrill_seekers\\hw4\\tests\\":"tests/"
-    		}
   	}
-
 }

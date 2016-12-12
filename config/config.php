@@ -1,4 +1,5 @@
 <?php
+require_once('Stripe.php');
 
 try {
   Stripe::setApiKey("sk_test_dnvPjCA1RfEZTSlePT6x9IXR"); //Replace with your Secret Key
