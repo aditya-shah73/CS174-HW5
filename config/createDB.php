@@ -1,4 +1,9 @@
 <?php 
+class create
+{
+
+  function __construct()
+  {
 $conn = mysqli_connect("localhost", "root", "");
   $stmt = mysqli_prepare($conn, "CREATE DATABASE Wishes");
   mysqli_stmt_execute($stmt);
@@ -10,4 +15,8 @@ $conn = mysqli_connect("localhost", "root", "");
     country varchar(12) default null,
     wish varchar(100) default null);");
   mysqli_stmt_execute($stmt);
+}
+}
+
+$crea = new create();
   ?>
