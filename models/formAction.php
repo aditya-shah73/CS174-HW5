@@ -1,17 +1,20 @@
 <?php
 
-$email = $_REQUEST['emails'];
-echo $email;
+$wish = $_REQUEST['userWish'];
+$user_email = $_REQUEST['userEmail'];
+$friend_email = $_REQUEST['friendEmails'];
+
+echo $user_email;
+echo $friend_email;
+
 $message = "Your friend made a wish by throwing coin in the fountain.";
-$headers = "From: rathore.shakti1912@gmail.com";
-$sent = mail($email,
-     "HW5 Email check", 
-     $message, $headers);
+$headers = "From: ".$user_email;
+$sent = mail($friend_email, "HW5 Email check", $message, $headers);
 
 if($sent)
-	{
-		echo $sent;
-	}
+{
+	echo $sent;
+}
 
 else
 {
@@ -40,4 +43,3 @@ $wishAmount = 1.25;
 $stmt = mysqli_prepare($conn, "INSERT INTO Wish (fountain, color, country, wish, wishAmount) VALUES (?,?,?,?,?)");
 		$stmt->bind_param('ssssd', $fountain, $color, $country, $wish, $wishAmount);
 		mysqli_stmt_execute($stmt);
-?>
