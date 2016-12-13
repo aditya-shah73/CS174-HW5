@@ -1,4 +1,10 @@
 <?php
+
+class wishes
+{
+
+	function __construct()
+	{
 define('FPDF_FONTPATH','../vendor/setasign/fpdf/font');
 require('fpdf.php'); 
 $id = $_REQUEST['transId'];
@@ -19,4 +25,9 @@ $pdf->Cell(0,10,'A recent wish was made into our ', 0, 1);
 $pdf->Cell(0,10,$color. ' '.$fountain.' based in '.$country,0,1);
 $pdf->Cell(0,10,'We hope your wish for '.$wish.' comes true! ',0,1);
 $pdf->Output('wishInfo.pdf', 'I'); 
-?>
+}
+
+}
+
+$wishes = new wishes();
+

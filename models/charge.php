@@ -1,4 +1,9 @@
 <?php
+class charge
+{
+
+  function __construct()
+  {
 try{
   require_once $_SERVER['DOCUMENT_ROOT'] . '/Hw5/CS174HW5/config/config.php';
   $token  = $_POST['stripeToken'];
@@ -18,7 +23,7 @@ try{
   $wish = $_REQUEST["userWish"];
   $user_email = $_REQUEST['userEmail'];
   $friend_email = $_REQUEST['friendEmail'];
-  $fountain = 'luxury fountain';
+  $fountain = 'luxury_fountain';
   $color = 'red';
   $country = 'india';
 
@@ -60,3 +65,6 @@ catch (Stripe_Error $e) {
 catch (Exception $e) { 
   echo "<h1>An exception occured</h1>";
 }
+}
+}
+$ch = new charge();

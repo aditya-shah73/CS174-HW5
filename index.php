@@ -21,9 +21,9 @@ echo "
 			<td>
 				<form name='fountainSelections'>
 				<h2>Fountain Selections</h2>
-				<input type='radio' name='f1' value='luxury fountain' checked='checked' onclick='displayFountain(this);''>Fountain 1 <br/>
-				<input type='radio' name='f1' value='classy fountain' onclick='displayFountain(this);'>Fountain 2 <br />
-				<input type='radio' name='f1' value='trashy fountain' onclick='displayFountain(this);'>Fountain 3
+				<input type='radio' name='f1' value='0' checked='checked' onclick='displayFountain(this);''>Fountain 1 <br/>
+				<input type='radio' name='f1' value='1' onclick='displayFountain(this);'>Fountain 2 <br />
+				<input type='radio' name='f1' value='2' onclick='displayFountain(this);'>Fountain 3
 				</form>
 			</td>
 			<td>
