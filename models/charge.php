@@ -19,6 +19,9 @@ try{
   $wish = $_REQUEST["userWish"];
   $user_email = $_REQUEST['userEmail'];
   $friend_email = $_REQUEST['friendEmail'];
+  $fountain = 'fountain1';
+  $color = 'red';
+  $country = 'india';
 
   $message = "Your friend ". $user_email. " made a wish by throwing coin in the fountain.";
   $headers = "From: ".$user_email;
@@ -26,6 +29,8 @@ try{
 
 
   $conn = mysqli_connect("localhost", "root", "");
+  $stmt = mysqli_prepare($conn, "DROP DATABASE IF EXISTS Wishes");
+  mysqli_stmt_execute($stmt);
   $stmt = mysqli_prepare($conn, "CREATE DATABASE Wishes");
   mysqli_stmt_execute($stmt);
   mysqli_select_db($conn, "Wishes");
@@ -37,13 +42,9 @@ try{
     country varchar(12) default null,
     wish varchar(100) default null);");
   mysqli_stmt_execute($stmt);
-  $fountain = 'fountain1';
-  $color = 'red';
-  $country = 'india';
-  $wish = 'Peace on Earth';
 
-  $stmt = mysqli_prepare($conn, "INSERT INTO Wish (fountain, color, country, wish) VALUES (?,?,?,?,?)");
-      $stmt->bind_param('ssssd', $fountain, $color, $country, $wish);
+  $stmt = mysqli_prepare($conn, "INSERT INTO Wish (fountain, color, country, wish) VALUES (?,?,?,?)");
+      $stmt->bind_param('ssss', $fountain, $color, $country, $wish);
       mysqli_stmt_execute($stmt);
 }
 //catch the errors in any way you like 
