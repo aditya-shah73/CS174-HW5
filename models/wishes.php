@@ -1,5 +1,8 @@
 <?php
 
+/*
+fetches the user's wish from the database and appends it to the pdf.
+ */
 class wishes
 {
 

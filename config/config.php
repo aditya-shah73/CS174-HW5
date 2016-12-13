@@ -1,5 +1,8 @@
 
 <?php
+/*
+setting  the api key for the stripe
+*/
 
 class config
 {

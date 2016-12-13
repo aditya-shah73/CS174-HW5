@@ -1,4 +1,8 @@
 <?php
+
+/*
+charges the customer with the card and handles sending emails and any exceptions that occur with payment.
+*/
 class charge
 {
 

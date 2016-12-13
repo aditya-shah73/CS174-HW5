@@ -1,4 +1,8 @@
 <?php 
+/*
+create the database schema with relations
+*/
+
 class create
 {
 
