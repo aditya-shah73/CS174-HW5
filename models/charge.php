@@ -1,5 +1,4 @@
 <?php
-
 try{
   require_once $_SERVER['DOCUMENT_ROOT'] . '/Hw5/CS174HW5/config/config.php';
   $token  = $_POST['stripeToken'];
@@ -19,29 +18,23 @@ try{
   $wish = $_REQUEST["userWish"];
   $user_email = $_REQUEST['userEmail'];
   $friend_email = $_REQUEST['friendEmail'];
-  $fountain = 'fountain1';
+  $fountain = 'luxury fountain';
   $color = 'red';
   $country = 'india';
 
-  $message = "Your friend ". $user_email. " made a wish by throwing coin in the fountain.";
+  $conn = mysqli_connect("localhost", "root", "", "Wishes");
+  $result = mysqli_query($conn, "SELECT * FROM Wish");
+  $num_rows = mysqli_num_rows($result);
+  echo $num_rows;
+  $transactionId = ++$num_rows;
+
+
+  $message = "Follow the link for wish information. http://localhost/hw5/CS174HW5/models/wishes.php?transId=".$transactionId;
   $headers = "From: ".$user_email;
   $sent = mail($friend_email, "Wish Fountain", $message, $headers);
 
 
-  $conn = mysqli_connect("localhost", "root", "");
-  $stmt = mysqli_prepare($conn, "DROP DATABASE IF EXISTS Wishes");
-  mysqli_stmt_execute($stmt);
-  $stmt = mysqli_prepare($conn, "CREATE DATABASE Wishes");
-  mysqli_stmt_execute($stmt);
-  mysqli_select_db($conn, "Wishes");
-  $stmt = mysqli_prepare($conn, "DROP TABLE IF EXISTS Wish");
-  $stmt = mysqli_prepare($conn, "CREATE TABLE Wish(
-    id integer primary key auto_increment,
-    fountain varchar(10) default null,
-    color varchar(10) default null,
-    country varchar(12) default null,
-    wish varchar(100) default null);");
-  mysqli_stmt_execute($stmt);
+  
 
   $stmt = mysqli_prepare($conn, "INSERT INTO Wish (fountain, color, country, wish) VALUES (?,?,?,?)");
       $stmt->bind_param('ssss', $fountain, $color, $country, $wish);

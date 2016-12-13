@@ -1,5 +1,5 @@
 <?php
-
+require_once("config/createDB.php");
 echo "
 <!DOCTYPE html>
 <head>

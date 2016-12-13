@@ -15,7 +15,8 @@ $stmt->fetch();
 $pdf = new FPDF();
 $pdf->AddPage("P");
 $pdf->SetFont('Times','', 20);
-$pdf->Cell(0,10,'A recent wish was made into our '.$color. ' '.$fountain.' based in '.$country, 0, 1);
+$pdf->Cell(0,10,'A recent wish was made into our ', 0, 1);
+$pdf->Cell(0,10,$color. ' '.$fountain.' based in '.$country,0,1);
 $pdf->Cell(0,10,'We hope your wish for '.$wish.' comes true! ',0,1);
 $pdf->Output('wishInfo.pdf', 'I'); 
 ?>
