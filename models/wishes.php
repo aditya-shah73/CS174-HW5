@@ -1,5 +1,5 @@
 <?php
-define('FPDF_FONTPATH','vendor/setasign/fpdf/font');
+define('FPDF_FONTPATH','../vendor/setasign/fpdf/font');
 require('fpdf.php'); 
 $id = $_REQUEST['transId'];
 
@@ -13,9 +13,9 @@ $stmt->fetch();
 
 //create pdf with variables from db
 $pdf = new FPDF();
-$pdf->AddPage();
-$pdf->SetFont('Times','', 24);
-$pdf->Cell(40,10,'A recent wish was made into our '.$color. ' '.$fountain.'  based in '.$country'.\n\n
-We hope the wish for '.$wish. ' comes true!');
+$pdf->AddPage("P");
+$pdf->SetFont('Times','', 20);
+$pdf->Cell(0,10,'A recent wish was made into our '.$color. ' '.$fountain.' based in '.$country, 0, 1);
+$pdf->Cell(0,10,'We hope your wish for '.$wish.' comes true! ',0,1);
 $pdf->Output('wishInfo.pdf', 'I'); 
 ?>
